@@ -1,0 +1,62 @@
+.w-e-text {
+    padding: 0 10px;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+  .w-e-text p,
+  .w-e-text h1,
+  .w-e-text h2,
+  .w-e-text h3,
+  .w-e-text h4,
+  .w-e-text h5,
+  .w-e-text table,
+  .w-e-text pre {
+    margin: 10px 0;
+    line-height: 1.5;
+  }
+  .w-e-text {
+      table{ display: table }
+      tr{ display:table-row }
+      thead{ display:table-header-group }
+      tbody{ display:table-row-group }
+      tfoot{ display:table-footer-group }
+      col{ display:table-column }
+      colgroup{ display:table-column-group }
+      td, th{ display: table-cell;}
+      caption{ display: table-caption }
+      th{font-weight: bolder; text-align: center }
+      caption{ text-align: center }
+      table{ border-spacing: 2px;}
+      thead, tbody,tfoot { vertical-align:middle }
+      td, th { vertical-align:inherit }
+      h1{ font-size:2rem; margin: .67rem 0 }
+      h2{ font-size:1.5rem; margin: .75rem 0 }
+      h3{ font-size:1.17rem; margin: .83rem 0 }
+      h4, p,blockquote, ul,fieldset, form,ol, dl, dir,menu { margin: 1.12rem 0}
+      h5 { font-size:.83rem; margin: 1.5rem 0 }
+      h6{ font-size:.75rem; margin: 1.67rem 0 }
+      h1, h2, h3, h4,h5, h6, b,strong  { font-weight: bolder }
+  }
+  pre>code{
+      word-wrap: normal;
+      font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
+      -webkit-hyphens: none;
+      hyphens: none;
+      line-height: 1.5;
+      margin: .5em 0;
+      overflow: auto;
+      padding: 1em;
+      -moz-tab-size: 4;
+      -o-tab-size: 4;
+      tab-size: 4;
+      text-align: left;
+      text-shadow: 0 1px #fff;
+      white-space: pre;
+      word-break: normal;
+      word-spacing: normal;
+      background-color: var(--w-e-textarea-slight-bg-color);
+      border: 1px solid var(--w-e-textarea-slight-border-color);
+      border-radius: 4px 4px;
+      display: block;
+      font-size: 14px;
+  }
