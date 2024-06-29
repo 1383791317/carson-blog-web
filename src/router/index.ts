@@ -1,12 +1,5 @@
-import { createRouter, createWebHistory } from 'vue-router'
-// import setting from './modules/setting'
-// import Table from './modules/Table'
-// import dashboard from './modules/dashboard'
-// import modularPackage from './modules/modularPackage'
-// import documents from './modules/documents'
-// import threeDimensional from './modules/threeDimensional'
-
-
+import { createRouter, createWebHashHistory } from 'vue-router'
+import type { App } from 'vue';
 
 export const constantRoutes = [
   {
@@ -18,14 +11,12 @@ export const constantRoutes = [
     path:'/',
     component:()=>import("@/views/index/index.vue"),
     name: 'home',
-    meta:{
-      title: '首页',
-      icon:'home'
-    }
+    meta:{title: '首页'}
   },
   {
     path:'/category/:id',
     component:()=>import("@/views/category/index.vue"),
+    meta: {title:'分类'},
     name: 'category',
   },
   {
@@ -40,36 +31,17 @@ export const constantRoutes = [
   },
 ]
 
-
-// 动态路由
-export const  adminList = [
-//   dashboard,
-//   Table,
-//   threeDimensional,
-//   setting,
-//   modularPackage,
-//   documents
-]
-
-
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes:[...constantRoutes],
   scrollBehavior: () => ({ left: 0, top: 0 }),
 })
 
 
 
-/**
- * 重置路由
- */
-// export function resetRouter() {
-//   const newRouter = createRouter({
-//     history: createWebHistory(import.meta.env.BASE_URL),
-//     routes: constantRoutes
-//   })
-
-//   router.matcher = newRouter.currentRoute.value.matched
-// }
-
+export async function setupRouter(app: App) {
+  app.use(router);
+  // 路由准备就绪后挂载APP实例
+  await router.isReady();
+}
 export default router

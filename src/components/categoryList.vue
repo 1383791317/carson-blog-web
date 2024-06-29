@@ -1,7 +1,7 @@
 <template>
     <div>
         <a-card hoverable style="width: 100%; margin-top: 10px;" v-for="(item, index) in articleItems">
-            <h1><a @click="() => $router.push({ name: 'article', params: { id: item.id } })">{{ item.title }}</a></h1>
+            <h1><a @click="() => router.push({ name: 'article', params: { id: item.id } })">{{ item.title }}</a></h1>
             <div style="color: #7a7a7a; margin-bottom: 8px;">
                 <span><FieldTimeOutlined />  {{ item.created_at }}</span>
                    &nbsp; &nbsp; 
@@ -17,7 +17,9 @@
 <script lang="ts" setup>
 import { ref, onMounted, watch } from 'vue';
 import { getArticleList } from '@/api/article'
+import { useRouter } from 'vue-router';
 import { FieldTimeOutlined } from '@ant-design/icons-vue';
+const router = useRouter();
 const props = defineProps({
     categoryId: { type: Number, default: 0 },
     tagId: { type: Number, default: 0 },
