@@ -1,5 +1,4 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import type { App } from 'vue';
 
 export const constantRoutes = [
   {
@@ -38,10 +37,4 @@ const router = createRouter({
 })
 
 
-
-export async function setupRouter(app: App) {
-  app.use(router);
-  // 路由准备就绪后挂载APP实例
-  await router.isReady();
-}
 export default router

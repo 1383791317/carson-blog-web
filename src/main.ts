@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import {setupRouter} from './router'
+import router from './router/index'
 import Antd from 'ant-design-vue'
 import 'ant-design-vue/dist/reset.css';
 import { createPinia } from 'pinia'
@@ -9,6 +9,5 @@ import { createPinia } from 'pinia'
 const app = createApp(App)
 app.use(Antd)
 app.use(createPinia())
-
-await setupRouter(app);
+app.use(router)
 app.mount('#app')
