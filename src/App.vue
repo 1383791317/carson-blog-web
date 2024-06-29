@@ -12,7 +12,8 @@ import TopMenu from './layout/TopMenu.vue'
       <RouterView />
     </a-layout-content>
     <a-layout-footer style="text-align: center">
-      Ant Design ©2018 Created by Ant UED
+      Copyright ©2024 <a href="https://yangchaocloud.cn">yangchaocloud.cn</a> All Rights Reserved.<br/>
+      <a target="_blank" href="https://beian.miit.gov.cn/">豫ICP备2024073309号</a>
     </a-layout-footer>
   </a-layout>
 </template>
