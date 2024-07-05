@@ -12,9 +12,10 @@
                 </a-breadcrumb-item>
                 <a-breadcrumb-item>
                     <span>分类-{{ categoryName }}</span>
+                    <span v-if="tagName"> & 标签-{{ tagName }}</span>
                 </a-breadcrumb-item>
             </a-breadcrumb>
-            <categoryList :categoryId="Number(route.params.id)"/>
+            <categoryList :categoryId="Number(route.params.id)" :tagId="Number(route.params.tag_id)"/>
         </a-col>
         <a-col :xs="24" :sm="24" :md="24" :lg="6" :xl="6" :style="{ padding: '15px' }">
             <tagList />
@@ -31,19 +32,24 @@ import { getCategoryInfo } from '@/api/article'
 import { useRoute } from 'vue-router';
 
 const route = useRoute();
-const categoryItems = (id :number) => {
-    getCategoryInfo({ id: id}).then(({ apiResultData }) => {
-        if('name' in apiResultData){
-            categoryName.value = apiResultData.name as string
+const categoryName = ref('')
+const tagName = ref('')
+
+const categoryItems = (id :number,tag_id:number) => {
+    getCategoryInfo({ id: id,tag_id:tag_id ? tag_id : 0}).then(({ apiResultData }) => {
+        if(apiResultData.category){
+            categoryName.value = apiResultData.category.name as string
+        }
+        if(apiResultData.tag){
+            tagName.value = apiResultData.tag.name as string
         }
     })
 };
 
-const categoryName = ref('')
-watch(() => route.params.id, () => {
-    categoryItems(Number(route.params.id))
+watch(() => route.path, () => {
+    categoryItems(Number(route.params.id),Number(route.params.tag_id))
 })
 onMounted(() => {
-    categoryItems(Number(route.params.id))
+    categoryItems(Number(route.params.id),Number(route.params.tag_id))
 })
 </script>

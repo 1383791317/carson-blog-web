@@ -4,14 +4,15 @@
           <template #title>
             标签
           </template>
-          <p @click="() => { $router.push({ name: 'tag', params: { id: item.id, name: item.name } }) }" v-for="(item, index) in tagsItems">{{ item.name }}</p>
+          <p @click="() => { $router.push({ name: 'category', params: { id: route.params.id, tag_id: item.id } }) }" v-for="(item, index) in tagsItems">{{ item.name }}</p>
         </a-card>
       </div>
 </template>
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue';
+import { useRoute } from 'vue-router';
 import { getTagsAll } from '@/api/article'
-
+const route = useRoute();
 interface TagsItem {
   id: number;
   name: string;

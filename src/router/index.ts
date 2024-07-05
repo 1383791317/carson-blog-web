@@ -13,7 +13,7 @@ export const constantRoutes = [
     meta:{title: '首页'}
   },
   {
-    path:'/category/:id',
+    path:'/category/:id/:tag_id?',
     component:()=>import("@/views/category/index.vue"),
     meta: {title:'分类'},
     name: 'category',

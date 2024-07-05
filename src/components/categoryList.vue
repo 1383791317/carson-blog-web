@@ -47,11 +47,10 @@ const getArticleItems = async () => {
     if (props.tagId) {
         params.tag_id = props.tagId;
     }
-    console.log(params)
     const { apiResultData } = await getArticleList(params) as any;
     articleItems.value =apiResultData.data;
 }
-watch(() => (props.categoryId,props.tagId), () => {
+watch(props, () => {
     getArticleItems()
 })
 onMounted(() => {

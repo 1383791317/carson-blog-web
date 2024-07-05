@@ -44,7 +44,8 @@ interface menusItems {
 const menusItems = ref<menusItems[]>([]);
 const handleMenuItemClick = ({ key }: any) => {
   router.push({
-    path: '/category/'+key, 
+    name: 'category', 
+    params: { id: key } 
   });
 };
 
