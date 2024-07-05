@@ -40,9 +40,7 @@ const categoryItems = (id :number,tag_id:number) => {
         if(apiResultData.category){
             categoryName.value = apiResultData.category.name as string
         }
-        if(apiResultData.tag){
-            tagName.value = apiResultData.tag.name as string
-        }
+        tagName.value = apiResultData.tag ? apiResultData.tag.name as string : ''
     })
 };
 
