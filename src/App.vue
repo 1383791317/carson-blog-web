@@ -3,6 +3,7 @@ import TopMenu from './layout/TopMenu.vue'
 </script>
 
 <template>
+  <a-config-provider :locale="zh_CN">
   <a-layout class="layout">
     <a-layout-header id="components-layout-top"
       :style="{ position: 'fixed', zIndex: 1, width: '100%', background: '#fff', padding: '0 10%' }">
@@ -16,4 +17,8 @@ import TopMenu from './layout/TopMenu.vue'
       <a target="_blank" href="https://beian.miit.gov.cn/">豫ICP备2024073309号</a>
     </a-layout-footer>
   </a-layout>
+  </a-config-provider>
 </template>
+<script lang="ts">
+import zh_CN from 'ant-design-vue/lib/locale/zh_CN';
+</script>
