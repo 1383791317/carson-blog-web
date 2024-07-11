@@ -34,13 +34,18 @@ import { useRoute } from 'vue-router';
 const route = useRoute();
 const categoryName = ref('')
 const tagName = ref('')
+interface CategoryInfo {
+  category?: { name: string };
+  tag?: { name: string };
+}
 
 const categoryItems = (id :number,tag_id:number) => {
     getCategoryInfo({ id: id,tag_id:tag_id ? tag_id : 0}).then(({ apiResultData }) => {
-        if(apiResultData.category){
-            categoryName.value = apiResultData.category.name as string
+        let data = apiResultData as CategoryInfo
+        if(data.category){
+            categoryName.value = data.category.name as string
         }
-        tagName.value = apiResultData.tag ? apiResultData.tag.name as string : ''
+        tagName.value = data.tag ? data.tag.name as string : ''
     })
 };
 

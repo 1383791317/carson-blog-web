@@ -23,11 +23,6 @@ export const constantRoutes = [
     component:()=>import("@/views/article/index.vue"),
     name: 'article',
   },
-  {
-    path:'/tag/:id',
-    component:()=>import("@/views/tag/index.vue"),
-    name: 'tag',
-  },
 ]
 
 const router = createRouter({
