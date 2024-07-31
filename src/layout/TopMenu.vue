@@ -28,6 +28,11 @@
         {{ item.label }}
       </a-menu-item>
     </template>
+    <a-sub-menu style="width: 100px;display: flex;justify-content: center;align-items: center;"  title="工具">
+      <a-menu-item @click="() => $router.push({ name: 'tool_fanqie'})">
+       番茄小说提取
+      </a-menu-item>
+    </a-sub-menu>
   </a-menu>
 </template>
 <script lang="ts" setup>

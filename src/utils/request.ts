@@ -49,7 +49,7 @@ const requestContentType = (type:string) => {
     }
 };
 
-interface resultType {
+export interface resultType {
   error: any;
   response: object;
   apiResultData: Array<API.tableType> | object;

@@ -20,7 +20,7 @@
             <a-pagination :total="itemsTotal" :show-total="() => `共 ${itemsTotal} 条`"
                 v-model:current="pagination.page" v-model:page-size="pagination.limit" show-size-changer
                 show-quick-jumper @change="pageItems" />
-        </div>
+        </div>``
     </div>
 </template>
 <script lang="ts" setup>

@@ -23,6 +23,11 @@ export const constantRoutes = [
     component:()=>import("@/views/article/index.vue"),
     name: 'article',
   },
+  {
+    path:'/tool/fanqie',
+    component:()=>import("@/views/tool/fanqie.vue"),
+    name: 'tool_fanqie',
+  },
 ]
 
 const router = createRouter({

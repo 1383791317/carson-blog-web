@@ -1,4 +1,4 @@
-import { request } from '@/utils/request';
+import { request, type resultType } from '@/utils/request';
 import * as articleType from './types/article';
 export function getMenu() {
   return request({
@@ -27,7 +27,7 @@ export function getArticleList(params: articleType.articleListRequest) {
     params: params
   });
 }
-export function getArticleDetail(id: number) {
+export function getArticleDetail(id: number)  {
   return request({
     url: '/article/detail',
     method: 'get',
@@ -38,5 +38,12 @@ export function getTagsAll() {
   return request({
     url: '/tags/all',
     method: 'get',
+  });
+}
+export function getToolFanqieArticle(url:string) {
+  return request({
+    url: '/tools/fanqie',
+    method: 'post',
+    data: {url:url}
   });
 }
