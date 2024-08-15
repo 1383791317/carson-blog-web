@@ -32,6 +32,7 @@ const router = useRouter();
 const props = defineProps({
     categoryId: { type: Number, default: 0 },
     tagId: { type: Number, default: 0 },
+    keyword: { type: String, default: '' },
 });
 const pagination = {
     page: 1,
@@ -51,6 +52,7 @@ interface ArticleItem {
 interface ArticleItemRequest {
     category_id?: number;
     tag_id?: number;
+    keyword?: string;
 }
 const articleItems = ref<ArticleItem[]>([])
 const getArticleItems = async () => {
@@ -60,6 +62,9 @@ const getArticleItems = async () => {
     }
     if (props.tagId) {
         params.tag_id = props.tagId;
+    }
+    if (props.keyword) {
+        params.keyword = props.keyword;
     }
     console.log({...params,...pagination})
     const { apiResultData } = await getArticleList({...params,...pagination}) as any;

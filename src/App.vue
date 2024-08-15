@@ -9,7 +9,7 @@ import TopMenu from './layout/TopMenu.vue'
       :style="{ position: 'fixed', zIndex: 1, width: '100%', background: '#fff', padding: '0 10%' }">
       <TopMenu />
     </a-layout-header>
-    <a-layout-content :style="{ padding: '2rem 15%', marginTop: '64px', minHeight: 'calc(100vh - 128px)' }">
+    <a-layout-content :style="{ padding: '2rem 15%', marginTop: '38px', minHeight: 'calc(100vh - 128px)' }">
       <RouterView />
     </a-layout-content>
     <a-layout-footer style="text-align: center">

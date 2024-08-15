@@ -14,13 +14,13 @@ export const constantRoutes = [
   },
   {
     path:'/category/:id/:tag_id?',
-    component:()=>import("@/views/category/index.vue"),
+    component:()=>import("@/views/article/category.vue"),
     meta: {title:'分类'},
     name: 'category',
   },
   {
     path:'/article/:id',
-    component:()=>import("@/views/article/index.vue"),
+    component:()=>import("@/views/article/detail.vue"),
     name: 'article',
   },
   {

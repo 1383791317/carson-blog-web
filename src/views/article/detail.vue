@@ -29,10 +29,10 @@
 </style>
 <template>
     <a-row>
-        <a-col :xs="24" :sm="24" :md="24" :lg="6" :xl="6" :style="{ padding: '15px' }">
+        <!-- <a-col :xs="24" :sm="24" :md="24" :lg="6" :xl="6" :style="{ padding: '15px' }">
             <LeftRow />
-        </a-col>
-        <a-col :xs="24" :sm="24" :md="24" :lg="18" :xl="18" :style="{ padding: '15px' }">
+        </a-col> -->
+        <a-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24" :style="{ padding: '15px' }">
             <a-card>
                 <h1> <a href="#">{{ article.title }}</a></h1>
                 <div style="color: #7a7a7a; margin-bottom: 8px;">
